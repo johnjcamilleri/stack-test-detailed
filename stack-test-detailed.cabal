@@ -3,11 +3,17 @@ version: 0.1.0.0
 build-type: Simple
 cabal-version: >=1.20
 
+library
+  exposed-modules: MyModule
+  build-depends: base
+  hs-source-dirs: src
+  default-language: Haskell2010
+
 test-suite exitcode
   type: exitcode-stdio-1.0
   main-is: Exitcode.hs
   other-modules: MyModule
-  build-depends: base >=4.10
+  build-depends: base
   hs-source-dirs: src testsuite
   default-language: Haskell2010
 
@@ -15,6 +21,6 @@ test-suite detailed
   type: detailed-0.9
   test-module: Detailed
   other-modules: MyModule
-  build-depends: base >=4.10, Cabal >=1.20
+  build-depends: base, Cabal >=1.20
   hs-source-dirs: src testsuite
   default-language: Haskell2010
